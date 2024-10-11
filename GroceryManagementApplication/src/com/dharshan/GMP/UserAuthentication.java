@@ -4,6 +4,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 public class UserAuthentication {
+	AdminMenu am = new AdminMenu();
+	Menu menu = new Menu();
 	void addNewUser(String role, String username, String password) {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -38,14 +40,17 @@ public class UserAuthentication {
 			ResultSet rs = stmt.executeQuery();
 			if(rs.next()) {
 			String role = rs.getString("Role");
+			password = rs.getString("PASSWORD");
 			if (role.equalsIgnoreCase("admin")) {
-				System.out.println("Logined as a"+role);
+				System.out.println("Logined as a "+role);
+				menu.disp_menu();
+				//am.disp_adminmenu();
 			}
 			else if(role.equalsIgnoreCase("employee")) {
 				System.out.println("Logined as a"+role);
 			}
 			else {
-				System.out.println("Invlaid Username or Password!");
+				System.out.println("Something went wrong! Please Select correct Role");
 			}
 			}
 		}

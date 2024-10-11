@@ -1,0 +1,42 @@
+package com.dharshan.GMP;
+import java.util.Scanner;
+public class AdminMenu {
+	Scanner kb = new Scanner(System.in);
+	Menu menu = new Menu();
+	Operations opr = new Operations();
+	int id, quantity;
+	void disp_adminmenu() {
+		System.out.println("WELCOME YOU ARE LOGINED AS A ADMIN");
+		menu.disp_menu();
+		/*while(true) {
+			System.out.println("\t\t__ ADMIN MENU __\n\t 1.ADD NEW PRODUCT \n\t 2.VIEW P \n\t 3.VIEW PRODUCTS \n\t 4.MANAGE USERS \n\t 5.LOGOUT");
+			int choice = kb.nextInt();
+			switch(choice) {
+			case 1:
+				System.out.println("Enter product Id to be added : ");
+				id = kb.nextInt();
+				kb.nextLine();
+				System.out.println("Enter How Many Stock to be added : ");
+				quantity = kb.nextInt();
+				opr.addStock(id, quantity);
+				break;
+			case 2:
+				System.out.println("Update Stock Selected");
+				break;
+			case 3:
+				System.out.println("Manage User Selected");
+				break;
+			case 4:
+				System.out.println("Your Stocks are underway");
+				break;
+			case 5:
+				System.out.println("Loging Out Please Wait...");
+				kb.close();
+				System.exit(0);
+				break;
+			default:
+				System.out.println("Enter Correct Choice");
+			}
+		}*/
+	}
+}

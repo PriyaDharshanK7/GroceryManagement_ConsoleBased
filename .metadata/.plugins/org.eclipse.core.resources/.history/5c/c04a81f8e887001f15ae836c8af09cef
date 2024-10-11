@@ -1,0 +1,9 @@
+package com.dharshan.GMP;
+import java.util.Scanner;
+public class AdminMenu {
+	Scanner kb = new Scanner(System.in);
+	void disp_adminmenu() {
+		System.out.println("WELCOME YOU ARE LOGINED AS A ADMIN");
+		System.out.println("\t\t__ ADMIN MENU __\n\t 1.ADD STOCK \n\t 2.UPDATE STOCK \n\t 3.MANAGE USERS \n\t 4.VIEW STOCKS \n\t 5.LOGOUT");
+	}
+}
