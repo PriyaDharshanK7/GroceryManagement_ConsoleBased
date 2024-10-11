@@ -129,7 +129,9 @@ public class Operations {
 				System.out.println("Deletion Failed!");
 			}
 		}
-		catch (Exception e) {}
+		catch (Exception e) {
+			e.PrintStack();
+		}
 	}
 	//Method to Add Quantity Stock
 	void addStock(int id, int quantity) {
