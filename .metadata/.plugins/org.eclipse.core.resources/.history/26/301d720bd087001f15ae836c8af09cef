@@ -1,0 +1,17 @@
+package com.dharshan.GMP;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+public class UserAuthentication {
+	void addNewUser(String role, String username, String password) {
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/grocerymanagement", "root", "");
+			PreparedStatement stmt = con.prepareStatement("insert into users(Role,USERNAME,PASSWORD) values (?,?,?)");
+			
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

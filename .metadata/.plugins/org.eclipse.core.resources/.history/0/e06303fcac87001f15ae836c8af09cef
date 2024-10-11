@@ -1,0 +1,13 @@
+package com.dharshan.GMP;
+import java.util.Scanner;
+public class UserTypeMenu {
+	Scanner kb =  new Scanner(System.in);
+	void disp_usermenu() {
+		System.out.println("\t\t__ WELCOME TO MY APPLICTAION __ \n\t 1.NEW USER \n\t 2.EXISTING USER ");
+		int choice = kb.nextInt();
+		switch(choice) {
+		case 1:
+			System.out.println("Welcome New User!");
+		}
+	} 
+}

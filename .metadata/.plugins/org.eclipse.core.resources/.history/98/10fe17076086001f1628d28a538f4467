@@ -1,0 +1,8 @@
+package com.dharshan.GMP;
+public class MainApplication {
+	public static void main(String[] args) {
+		Menu menu = new Menu();
+		Operations opertaions = new Operations();
+		menu.disp_menu();
+	}
+}

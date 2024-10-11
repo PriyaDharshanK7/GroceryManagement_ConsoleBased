@@ -1,0 +1,28 @@
+package com.dharshan.application;
+
+import java.util.ArrayList;
+
+public class ProductManagement {
+	int pro_q=0, pro_prc;
+	String pro_name;
+	ArrayList<Object> products = new ArrayList<>();
+	public int getPro_q() {
+		return pro_q;
+	}
+	public void setPro_q(int pro_q) {
+		this.pro_q = pro_q;
+	}
+	public int getPro_prc() {
+		return pro_prc;
+	}
+	public void setPro_prc(int pro_prc) {
+		this.pro_prc = pro_prc;
+	}
+	public String getPro_name() {
+		return pro_name;
+	}
+	public void setPro_name(String pro_name) {
+		this.pro_name = pro_name;
+	}
+	
+}

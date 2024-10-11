@@ -1,0 +1,4 @@
+package com.dharshan.GMP;
+public class UserAuthentication {
+	void addNewUser(String username)
+}
