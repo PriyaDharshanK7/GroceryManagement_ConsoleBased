@@ -130,7 +130,7 @@ public class Operations {
 			}
 		}
 		catch (Exception e) {
-			e.PrintStack();
+			e.printStackTrace();
 		}
 	}
 	//Method to Add Quantity Stock
@@ -178,4 +178,46 @@ public class Operations {
 		}
 		catch (Exception e) {}
 	}}
+	void addNewUser(String role, String username, String password) {
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/grocerymanagement", "root", "");
+			PreparedStatement stmt = con.prepareStatement("insert into users(Role,USERNAME,PASSWORD) values (?,?,?)");
+			stmt.setString(1, role);
+			stmt.setString(2, username);
+			stmt.setString(3, password);
+			int i = stmt.executeUpdate();
+			if (i > 0) {
+				System.out.println("New Profile Added!");
+				ResultSet rs = stmt.getGeneratedKeys();
+				while(rs.next()) {
+					System.out.println("Your User Id : "+rs.getInt("UID"));
+				}
+			}
+			else {
+				System.out.println("New Profile Creation Failed");
+			}
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	void deleteUser(int id) {
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/grocerymanagement", "root", "");
+			PreparedStatement stmt = con.prepareStatement("delete from users where UID = ?");
+			stmt.setInt(1, id);
+			int i = stmt.executeUpdate();
+			if (i > 0) {
+				System.out.println("Deleted User!");
+			}
+			else {
+				System.out.println("User Not Exists!");
+			}
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

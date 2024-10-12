@@ -10,7 +10,7 @@ public class Menu {
 		System.out.println("Welcome to My Grocery Management Application...");
 		while(true) {
 			try {
-				System.out.println("\t\t--M E N U--\t\t\n\t 1. View Products\n \t 2. Add New Product\n \t 3. Edit Existing Product\n \t 4. Delete Product\n \t 5. Add Stock(Quantity)\n \t 6. Deduct Stock(Quantity)\n \t 7. Exit");
+				System.out.println("\t\t--M E N U--\t\t\n\t 1. View Products\n \t 2. Add New Product\n \t 3. Edit Existing Product\n \t 4. Delete Product\n \t 5. Add Stock(Quantity)\n \t 6. Deduct Stock(Quantity)\n \t 7. Log Out");
 				choice = kb.nextInt();
 				switch(choice) {
 				case 1:

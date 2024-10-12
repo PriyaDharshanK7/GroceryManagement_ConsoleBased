@@ -2,6 +2,7 @@ package com.dharshan.GMP;
 import java.util.Scanner;
 public class UserTypeMenu {
 	UserAuthentication ua = new UserAuthentication();
+	Operations operation = new Operations();
 	Scanner kb =  new Scanner(System.in);
 	String role;
 	String username;
@@ -20,7 +21,7 @@ public class UserTypeMenu {
 			System.out.println("Enter Password : ");
 			password = kb.nextLine();
 			if(role.equalsIgnoreCase("admin") || role.equalsIgnoreCase("employee")) {
-				ua.addNewUser(role, username, password);
+				operation.addNewUser(role, username, password);
 			}
 			else {
 				System.out.println("Please Enter Valid User Role[Admin / Employee]");

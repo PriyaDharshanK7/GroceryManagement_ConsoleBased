@@ -1,0 +1,10 @@
+package com.dharshan.GMP;
+import java.util.Scanner;
+public class AdminMenu {
+	Scanner kb = new Scanner(System.in);
+	void disp_adminmenu() {
+		while(true) {
+			switch(choice)
+		}
+	}
+}

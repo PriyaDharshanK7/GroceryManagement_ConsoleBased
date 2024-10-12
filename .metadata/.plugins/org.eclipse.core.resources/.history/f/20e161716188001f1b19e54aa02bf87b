@@ -1,0 +1,60 @@
+package com.dharshan.GMP;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+public class UserAuthentication {
+	AdminMenu am = new AdminMenu();
+	Menu menu = new Menu();
+	void addNewUser(String role, String username, String password) {
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/grocerymanagement", "root", "");
+			PreparedStatement stmt = con.prepareStatement("insert into users(Role,USERNAME,PASSWORD) values (?,?,?)");
+			stmt.setString(1, role);
+			stmt.setString(2, username);
+			stmt.setString(3, password);
+			int i = stmt.executeUpdate();
+			if (i > 0) {
+				System.out.println("New Profile Added!");
+				ResultSet rs = stmt.getGeneratedKeys();
+				while(rs.next()) {
+					System.out.println("Your User Id : "+rs.getInt(1));
+				}
+			}
+			else {
+				System.out.println("New Profile Creation Failed");
+			}
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	void loginUser(int uid,String password) {
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/grocerymanagement", "root", "");
+			PreparedStatement stmt = con.prepareStatement("select * from users where UID = ? AND PASSWORD = ?");
+			stmt.setInt(1, uid);
+			stmt.setString(2, password);
+			ResultSet rs  = stmt.executeQuery();
+			
+			while(rs.next()) {
+				String pass_get  = rs.getString("PASSWORD");
+			}
+			System.out.println(pass_get);
+			/*if(password.equals(pass_get)) {
+				System.out.println("Success!");
+				while(rs.next()) {
+					System.out.println("Your Role is "+rs.getString("Role"));
+				}
+			}
+			else {
+				System.out.println("Incorrect Password!");
+			}*/
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
