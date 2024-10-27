@@ -3,7 +3,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.Scanner;
+
+import org.mindrot.jbcrypt.BCrypt;
 public class Operations {
 	Scanner kb =  new Scanner(System.in);
 	int c = 0 ;
@@ -182,16 +185,17 @@ public class Operations {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/grocerymanagement", "root", "");
-			PreparedStatement stmt = con.prepareStatement("insert into users(Role,USERNAME,PASSWORD) values (?,?,?)");
+			PreparedStatement stmt = con.prepareStatement("insert into users(Role,USERNAME,PASSWORD) values (?,?,?) ",Statement.RETURN_GENERATED_KEYS);
+			String hsp = BCrypt.hashpw(password, BCrypt.gensalt());
 			stmt.setString(1, role);
 			stmt.setString(2, username);
-			stmt.setString(3, password);
+			stmt.setString(3, hsp);
 			int i = stmt.executeUpdate();
 			if (i > 0) {
 				System.out.println("New Profile Added!");
 				ResultSet rs = stmt.getGeneratedKeys();
 				while(rs.next()) {
-					System.out.println("Your User Id : "+rs.getInt("UID"));
+					System.out.println("Your User Id : "+rs.getInt(1));
 				}
 			}
 			else {

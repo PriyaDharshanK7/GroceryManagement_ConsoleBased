@@ -1,7 +1,0 @@
-package com.dharshan.GMP;
-public class AdminMenu {
-	void disp_adminmenu() {
-		System.out.println("WELCOME YOU ARE LOGINED AS A ADMIN");
-		
-	}
-}

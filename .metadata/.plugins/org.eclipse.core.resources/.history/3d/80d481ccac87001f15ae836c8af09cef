@@ -1,6 +1,0 @@
-package com.dharshan.GMP;
-public class UserTypeMenu {
-	void disp_usermenu() {
-		System.out.println("\t\t__ WELCOME TO MY APPLICTAION __ \n\t 1.NEW USER \n\t 2.EXISTING USER ");
-	}
-}
