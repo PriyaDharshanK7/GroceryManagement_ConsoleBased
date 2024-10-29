@@ -60,7 +60,7 @@ public class AdminMenu {
 				operation.deleteItem(id);
 				break;
 			case 7:
-				//System.out.println("View Users!");
+				System.out.println("View Users!");
 				operation.viewUsers();
 				break;
 			case 8: // To Exit

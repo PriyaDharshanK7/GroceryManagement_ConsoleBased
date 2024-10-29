@@ -8,7 +8,6 @@ INDEX VERSION 1.130+D:\GroceryManagement_Project\.metadata\.plugins\org.eclipse.
 401767567.index
 2256529200.index
 2758576337.index
-1298676159.index
 2374791391.index
 3852244655.index
 1227306570.index

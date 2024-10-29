@@ -22,11 +22,6 @@ public class Operations {
 			}
 			while(rs.next()) {
 				c++;
-				System.out.println("Record Number : "+c);
-				System.out.println("\tRole :"+rs.getString("Role"));
-				System.out.println("\tUser Id:"+rs.getInt("UID"));
-				System.out.println("\tUser Name:"+rs.getString("USERNAME"));
-				System.out.println("---------------------------------------");
 			}
 		}
 		catch (Exception e) {

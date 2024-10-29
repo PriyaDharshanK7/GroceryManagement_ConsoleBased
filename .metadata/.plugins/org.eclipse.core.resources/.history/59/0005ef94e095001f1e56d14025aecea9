@@ -59,11 +59,7 @@ public class AdminMenu {
 				id = kb.nextInt();
 				operation.deleteItem(id);
 				break;
-			case 7:
-				//System.out.println("View Users!");
-				operation.viewUsers();
-				break;
-			case 8: // To Exit
+			case 8:
 				System.out.println("LoggingOut");
 				kb.close();
 				System.exit(0);

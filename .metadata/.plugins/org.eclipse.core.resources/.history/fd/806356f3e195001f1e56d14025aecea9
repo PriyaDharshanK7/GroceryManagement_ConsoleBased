@@ -18,15 +18,10 @@ public class Operations {
 			PreparedStatement stmt = con.prepareStatement("select Role, UID, USERNAME from users");
 			ResultSet rs = stmt.executeQuery();
 			if(!rs.isBeforeFirst()) { // Check With DB and return if No DataSet is Found
-				System.out.println("There is no records!");
+				System.out.println("No Record Founded!");
 			}
 			while(rs.next()) {
-				c++;
-				System.out.println("Record Number : "+c);
-				System.out.println("\tRole :"+rs.getString("Role"));
-				System.out.println("\tUser Id:"+rs.getInt("UID"));
-				System.out.println("\tUser Name:"+rs.getString("USERNAME"));
-				System.out.println("---------------------------------------");
+				
 			}
 		}
 		catch (Exception e) {
@@ -42,7 +37,7 @@ public class Operations {
 			PreparedStatement stmt = con.prepareStatement("select * from product");
 			ResultSet rs = stmt.executeQuery();
 			if(!rs.isBeforeFirst()) { // Check With DB and return if No DataSet is Found
-				System.out.println("There is no records!");
+				System.out.println("No Record Founded!");
 			}
 			else {
 				while(rs.next()) {

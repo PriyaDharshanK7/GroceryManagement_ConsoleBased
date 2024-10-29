@@ -15,19 +15,7 @@ public class Operations {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/grocerymanagement", "root", "");
-			PreparedStatement stmt = con.prepareStatement("select Role, UID, USERNAME from users");
-			ResultSet rs = stmt.executeQuery();
-			if(!rs.isBeforeFirst()) { // Check With DB and return if No DataSet is Found
-				System.out.println("There is no records!");
-			}
-			while(rs.next()) {
-				c++;
-				System.out.println("Record Number : "+c);
-				System.out.println("\tRole :"+rs.getString("Role"));
-				System.out.println("\tUser Id:"+rs.getInt("UID"));
-				System.out.println("\tUser Name:"+rs.getString("USERNAME"));
-				System.out.println("---------------------------------------");
-			}
+			PreparedStatement stmt = con.prepareStatement("select * from users");
 		}
 		catch (Exception e) {
 			e.printStackTrace();
@@ -42,8 +30,8 @@ public class Operations {
 			PreparedStatement stmt = con.prepareStatement("select * from product");
 			ResultSet rs = stmt.executeQuery();
 			if(!rs.isBeforeFirst()) { // Check With DB and return if No DataSet is Found
-				System.out.println("There is no records!");
-			}
+				System.out.println("No Record Founded!");
+		   }
 			else {
 				while(rs.next()) {
 					c = c + 1;
