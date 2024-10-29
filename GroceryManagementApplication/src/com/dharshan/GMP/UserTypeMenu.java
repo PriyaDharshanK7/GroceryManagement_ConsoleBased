@@ -3,6 +3,8 @@ import java.util.Scanner;
 public class UserTypeMenu {
 	UserAuthentication ua = new UserAuthentication();
 	Operations operation = new Operations();
+	AdminMenu am = new AdminMenu();
+	EmployeeMenu em = new EmployeeMenu();
 	Scanner kb =  new Scanner(System.in);
 	String role;
 	String username;
@@ -26,9 +28,14 @@ public class UserTypeMenu {
 			else {
 				System.out.println("Please Enter Valid User Role[Admin / Employee]");
 			}
+			if(role.equalsIgnoreCase("admin")) {
+				am.disp_adminmenu();
+			}
+			if(role.equalsIgnoreCase("employee"))
+				em.empMenu_disp();
 			break;
 		case 2:
-			System.out.println("Welcome User");
+			System.out.println("Welcome...");
 			System.out.println("Enter your User Id : ");
 			int uid = kb.nextInt();
 			kb.nextLine();
@@ -37,7 +44,7 @@ public class UserTypeMenu {
 			ua.loginUser(uid, password);
 			break;
 		default:
-			System.out.println("Please Enter Valid Input");
+			System.out.println("Oops.., Something went wrong!");
 			break;
 		}
 	} 

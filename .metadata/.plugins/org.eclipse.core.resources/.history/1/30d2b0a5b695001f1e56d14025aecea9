@@ -1,0 +1,6 @@
+package com.dharshan.GMP;
+public class EmployeeMenu {
+	void empMenu_disp() {
+		System.out.println("Welcome ");
+	}
+}

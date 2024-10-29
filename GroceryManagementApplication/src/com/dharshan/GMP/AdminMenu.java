@@ -14,6 +14,7 @@ public class AdminMenu {
 		while(true) {
 			System.out.println("\t\t --M E N U-- \n \t 1.Add New User\n\t 2.Remove User\n\t 3.Add New Product\n\t 4.View Products\n\t 5.Edit Products\n\t 6.Remove Products\n\t 7.Log Out");
 			int choice = kb.nextInt();
+			kb.nextLine();
 			switch(choice) {
 			case 1:// Add new user!
 				System.out.println("Enter Role[Admin / Employee] :");

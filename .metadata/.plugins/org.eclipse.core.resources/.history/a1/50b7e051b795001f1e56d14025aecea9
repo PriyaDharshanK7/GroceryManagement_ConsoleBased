@@ -1,0 +1,14 @@
+package com.dharshan.GMP;
+import java.util.Scanner;
+public class EmployeeMenu {
+	void empMenu_disp() {
+		int ch;
+		Scanner kb = new Scanner(System.in);
+		System.out.println("Welcome... You Logged in as Employee");
+		while(true) {
+			System.out.println("\t\t EMPLOYEE MENU \n \t1.Add Stock \n \t2.Remove Stock \n \t3.View Stocks \n \t4.Log Out");
+			ch = kb.nextInt();
+			kb.nextLine();
+		}
+	}
+}

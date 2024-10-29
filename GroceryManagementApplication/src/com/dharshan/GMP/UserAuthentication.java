@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import org.mindrot.jbcrypt.BCrypt;
 public class UserAuthentication {
 	AdminMenu am = new AdminMenu();
+	EmployeeMenu em = new EmployeeMenu();
 	void loginUser(int uid,String password) {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -22,7 +23,7 @@ public class UserAuthentication {
 						am.disp_adminmenu();
 					}
 					else {
-						System.out.println("Wait Until Employee Menu Is added!");
+						em.empMenu_disp();
 					}
 				}
 			}

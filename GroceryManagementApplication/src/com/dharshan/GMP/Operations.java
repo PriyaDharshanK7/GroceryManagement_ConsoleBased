@@ -12,6 +12,7 @@ public class Operations {
 	int c = 0 ;
 	// Method to View Items
 	void viewItems() {
+		c = 0;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/grocerymanagement","root","");
@@ -196,6 +197,7 @@ public class Operations {
 				ResultSet rs = stmt.getGeneratedKeys();
 				while(rs.next()) {
 					System.out.println("Your User Id : "+rs.getInt(1));
+					System.out.println("New User Successfully Added");
 				}
 			}
 			else {
